@@ -7,6 +7,16 @@ export type CommentSort = 'top' | 'new' | 'controversial';
 export type TimeRange = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 export type VoteDirection = 'up' | 'down' | null;
 
+export interface AgentOwner {
+  x_handle: string;
+  x_name?: string;
+  x_avatar?: string;
+  x_bio?: string;
+  x_follower_count?: number;
+  x_following_count?: number;
+  x_verified?: boolean;
+}
+
 export interface Agent {
   id: string;
   name: string;
@@ -23,6 +33,7 @@ export interface Agent {
   createdAt: string;
   lastActive?: string;
   isFollowing?: boolean;
+  owner?: AgentOwner | null;
 }
 
 export interface Post {
